@@ -1,0 +1,76 @@
+{
+  "Numero_Esercitazione": 6,
+  "Data": "15/05/2024",
+  "ID_Squadra_Gruppo": "A09",
+  "Studenti": [
+    {
+      "Cognome": "Allione",
+      "Nome": "Paolo",
+      "Matricola": 296500
+    },
+    {
+      "Cognome": "Camolese",
+      "Nome": "Claudio",
+      "Matricola": 297378
+    },
+    {
+      "Cognome": "Caglioti",
+      "Nome": "Massimo",
+      "Matricola": 293418
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    }
+  ],
+  "Note_Per_La_Compilazione": {
+    "Nota": "Per inserire nel report i programmi Arduino fare copia ed incolla esclusivamente nella vista 'tree' dell'editor JSON online, in modo che venga preposto in automatico il back-slash davanti ai doppi apici delle stringhe"
+  },
+  "Dati_Generali": {
+    "Ora_Inizio": "08:30",
+    "Temperatura_Inizale": "21.3",
+    "Ora_Fine": "11:30",
+    "Temperatura_Finale": "21.9"
+  },
+  "Strumenti": {
+    "Scheda_Arduino": "LED409",
+    "Multimetro_HP": "34401A",
+    "Oscilloscopio": "DS1054",
+    "Alimentatore": "",
+    "Generatore_di_Segnale": "",
+    "Note": "Indicare nei campi precedenti modello e numero seriale degli strumenti o numero inventario"
+  },
+  "Sezione_1_Caratterizzazione_con_generazione_segnale": {
+    "Programma_Arduino": "void setup() \n{\n    Serial.begin(57600);\n    Serial.println(\"Ready\");\n    pinMode(8, INPUT);\n    pinMode(9,OUTPUT);\n\n\n    TCCR1A = 0b01000000; // Nessuna azione sui pin\n    TCCR1B = 0b00001001; // Normal Mode, Prescaler 1:1\n \n    TIFR1 |= 2; // Cancella IF cattura e IF Overflow\n    TIMSK1 |= 2; // Abilita IE cattura e IE Overflow\n\n\n    OCR1A = 80-1;\n    OCR1B = 7000;\n\n\n}\n\n\n\n\nvoid loop()\n{\n}",
+    "Frequenza_nominale_segnale_in_Hz": 100000,
+    "Frequenza_misurata_segnale_in_Hz": 99871.11,
+    "Incertezza_assoluta_di_lettura_in_Hz": 1021,
+    "Incertezza_assoluta_dello_strumento_di_riferimento_in_Hz": "1e(-6)",
+    "Incertezza_assoluta_totale_misura_in_Hz": 4500,
+    "Dichiarazione_Caratterizzazione": {
+      "Frequenza_di_oscillazione_del_clock_calcolata_in_Hz": 15979377,
+      "Incertezza_relativa_frequenza_del_clock": 0.13
+    },
+    "Eventuali_commenti": ""
+  },
+  "Sezione_2_Realizzazione_frequenzimetro_completo": {
+    "Programma_Arduino": "volatile char REQ;\nvolatile unsigned short NOVR, MLow, MHi, ResH, ResL;\nvolatile long NPCount, ResN;\ndouble fck = 15979377.7754;\nlong Tgate_ms = 1000;\n\n\nvoid setup() {\n\n\n  Serial.begin(57600);\n  Serial.println(\"Ready\");\n  pinMode(8, INPUT);\n\n\n  TCCR1A = 0b00000000;   \n  TCCR1B = 0b00000001;  \n  TIFR1 |= 32+1;  \n  TIMSK1 |= 32+1; \n\n\n  delay(2000);\n}\n\n\nISR(TIMER1_OVF_vect)\n{\n   NOVR++;\n}\n\n\nISR(TIMER1_CAPT_vect) \n{\n  MLow = ICR1;\n  MHi = NOVR;\n  NPCount++;\n  if (REQ)\n   {\n    ResH = MHi;\n    ResL = MLow;\n    ResN = NPCount;\n    REQ = 0;\n   }\n}\n\n\nvoid loop(void){\n unsigned long m1,m2,m;\n unsigned N1,N2,NP;\n bool done;\n \n done=false;\n REQ=1;\n  while(REQ==1){}\n  m1=(unsigned long) ResL | ((unsigned long) ResH<<16);\n  N1=ResN;\n  \n  delay(Tgate_ms);\n  \n  REQ=1;\n  while(REQ==1){}  //aspetto che torni 0\n  m2=(unsigned long) ResL | ((unsigned long) ResH<<16);\n  N2=ResN;\n  \n  m=m2-m1;\n  NP=N2-N1;\n  \n // Serial.println(m);\n  double freq = (fck/(double)m)*((double)NP);\n  Serial.println(\"Frequenza letta: \" + String(freq) + \" Hz\");\n  Serial.println(\"freq_oscillatore: \" + String((((float)freq)/(double)1)*(double)fck)+ \" Hz\"); \n\n\n  delay(500);\n  \n}\n",
+    "Misura_Frequenza_in_Hz": 10124.36,
+    "Incertezza_Misura_in_Hz": 1021,
+    "Stabilita_clock_in_temperatura": {
+      "Nota": "Scaldate il microcontrollore di Arduino appoggiando un dito al centro del dispositivo per circa 1 minuto e ripetete la misura di frequenza",
+      "Misura_Frequenza_in_Hz": 10124.38,
+      "Variazione_Relativa_Misura": 0.02
+    },
+    "Eventuali_commenti": ""
+  },
+  "Sezione_3_Facoltativa": {
+    "Lettura_ottenuta_in_Hz_sul_segnale_1PPS": 0,
+    "Programma_Arduino_con_set_tempo_di_gate": "",
+    "Front_panel_programma_VI": "",
+    "Block_diagram_1_programma_VI": "",
+    "Block_diagram_2_programma_VI": "",
+    "Eventuali_commenti": ""
+  }
+}

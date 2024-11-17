@@ -1,0 +1,47 @@
+{
+  "Numero_Esercitazione": 3,
+  "Data": "17/04/2024",
+  "ID_Squadra_Gruppo": "XYY",
+  "Studenti": [
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    }
+  ],
+  "Dati_Generali": {
+    "Ora_Inizio": "00:00",
+    "Temperatura_Inizale": "0",
+    "Ora_Fine": "00:00",
+    "Temperatura_Finale": "0"
+  },
+  "Progetto": {
+    "Immagine_FrontPanel": "",
+    "Immagine_BlockDiagram_1": "",
+    "Immagine_BlockDiagram_2": "",
+    "Immagine_BlockDiagram_3": "",
+    "Nota": "Usate un convertitore online Image to Base64 per convertire lo screenshot in testo. Ad esempio il convertitore: https://www.browserling.com/tools/image-to-base64"
+  },
+  "Parte_Facoltativa" : {
+    "Immagine_FrontPanel": "",
+    "Immagine_BlockDiagram_1": "",
+    "Immagine_BlockDiagram_2": "",
+    "Immagine_BlockDiagram_3": "",
+    "Nota": "Usate un convertitore online Image to Base64 per convertire lo screenshot in testo. Ad esempio il convertitore: https://www.browserling.com/tools/image-to-base64"
+  }
+}

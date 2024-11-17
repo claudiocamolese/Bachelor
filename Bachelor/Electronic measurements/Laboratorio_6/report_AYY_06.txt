@@ -1,0 +1,78 @@
+{
+  "Numero_Esercitazione": 6,
+  "Data": "15/05/2024",
+  "ID_Squadra_Gruppo": "XYY",
+  "Studenti": [
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    }
+  ],
+  "Note_Per_La_Compilazione": {
+    "Nota": "Per inserire nel report i programmi Arduino fare copia ed incolla esclusivamente nella vista 'tree' dell'editor JSON online, in modo che venga preposto in automatico il back-slash davanti ai doppi apici delle stringhe"
+  },
+  "Dati_Generali": {
+    "Ora_Inizio": "00:00",
+    "Temperatura_Inizale": "0",
+    "Ora_Fine": "00:00",
+    "Temperatura_Finale": "0"
+  },
+  "Strumenti": {
+    "Scheda_Arduino": "",
+    "Multimetro_HP": "",
+    "Oscilloscopio": "",
+    "Alimentatore": "",
+    "Generatore_di_Segnale": "",
+    "Note": "Indicare nei campi precedenti modello e numero seriale degli strumenti o numero inventario"
+  },
+  "Sezione_1_Caratterizzazione_con_generazione_segnale": {
+    "Programma_Arduino": "",
+    "Frequenza_nominale_segnale_in_Hz": 0,
+    "Frequenza_misurata_segnale_in_Hz": 0,
+    "Incertezza_assoluta_di_lettura_in_Hz": 0,
+    "Incertezza_assoluta_dello_strumento_di_riferimento_in_Hz": 0,
+    "Incertezza_assoluta_totale_misura_in_Hz": 0,
+    "Dichiarazione_Caratterizzazione": {
+      "Frequenza_di_oscillazione_del_clock_calcolata_in_Hz": 0,
+      "Incertezza_relativa_frequenza_del_clock": 0
+    },
+    "Eventuali_commenti" : ""
+  },
+  "Sezione_2_Realizzazione_frequenzimetro_completo": {
+    "Programma_Arduino": "",
+    "Misura_Frequenza_in_Hz": 0,
+    "Incertezza_Misura_in_Hz": 0,
+    "Stabilita_clock_in_temperatura": {
+      "Nota": "Scaldate il microcontrollore di Arduino appoggiando un dito al centro del dispositivo per circa 1 minuto e ripetete la misura di frequenza",
+      "Misura_Frequenza_in_Hz": 0,
+      "Variazione_Relativa_Misura": 0
+    },
+    "Eventuali_commenti" : ""
+
+  },
+  "Sezione_3_Facoltativa": {
+    "Lettura_ottenuta_in_Hz_sul_segnale_1PPS": 0,
+    "Programma_Arduino_con_set_tempo_di_gate": "",
+    "Front_panel_programma_VI": "",
+    "Block_diagram_1_programma_VI": "",
+    "Block_diagram_2_programma_VI": "",
+    "Eventuali_commenti" : ""
+
+  }
+}

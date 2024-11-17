@@ -1,0 +1,84 @@
+{
+  "Numero_Esercitazione": 7,
+  "Data": "22/05/2024",
+  "ID_Squadra_Gruppo": "XYY",
+  "Studenti": [
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    }
+  ],
+  "Note_Per_La_Compilazione": {
+    "Nota": "Per inserire nel report i programmi Arduino fare copia ed incolla esclusivamente nella vista 'tree' dell'editor online, in modo che venga preposto in automatico il back-slash davanti ai doppi apici delle stringhe",
+    "Nota2": "Dove richiesto di inserire il vettore di 1000 letture è necessario copiare 1000 elementi anche se come esempio il campo contiene al momento solo 3 elementi"
+  },
+  "Dati_Generali": {
+    "Ora_Inizio": "00:00",
+    "Temperatura_Inizale": "0",
+    "Ora_Fine": "00:00",
+    "Temperatura_Finale": "0"
+  },
+  "Strumenti": {
+    "Scheda_Arduino": "",
+    "Multimetro_HP": "",
+    "Oscilloscopio": "",
+    "Note": "Indicare nei campi precedenti modello e numero seriale degli strumenti o numero inventario se usati"
+  },
+  "Progetto_preliminare_per_misura_3_3nF": {
+    "Nota": "Suggerito usare Rs pari a 100 kOhm",
+    "Resistore_Rs_in_Ohm": 0,
+    "Tempo_T_in_us": 0,
+    "Prescaler": "1:1 (non cambiare, non usare un prescaler diverso)",
+    "Valore_Soglia_A": 0,
+    "Valore_Soglia_B": 0,
+    "Incertezza_attesa_in_nF": 0,
+    "Risoluzione_attesa_in_nF": 0
+  },
+  "Sperimentazione_con_condensatore_del_gruppo": {
+    "Singola_Lettura": {
+      "Programma_Arduino": "",
+      "Misura_3_3nF_Singola_Lettura_in_nF": 0,
+      "Incertezza_in_nF": 0,
+      "Foto_oscilloscopio_come_da_slide": ""
+    },
+    "Ripetizione_Misure": {
+      "Programma_Arduino": "",
+      "Vettore_1000_Letture_3_3nF_in_nF": [
+        0,
+        0,
+        0
+      ],
+      "Valore_medio_in_nF": 0,
+      "Scarto_tipo_sperimentale_delle_letture_in_nF": 0,
+      "Incertezza_totale_in_nF": 0,
+      "Contributi_Considerati": "Indicare",
+      "Contributo_Predominante": "Indicare quale"
+    }
+  },
+  "Misura_campione_civetta_3_3nF": {
+    "Vettore_1000_Letture_3_3nF_in_nF": [
+      0,
+      0,
+      0
+    ],
+    "Misura_capacita_in_nF": 0,
+    "Incertezza_assoluta_misura_in_nF": 0
+  },
+  "Eventuali_Note": ""
+}

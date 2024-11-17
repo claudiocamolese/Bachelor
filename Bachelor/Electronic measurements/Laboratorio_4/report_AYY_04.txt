@@ -1,0 +1,70 @@
+{
+  "Numero_Esercitazione": 4,
+  "Data": "24/04/2024",
+  "ID_Squadra_Gruppo": "XYY",
+  "Studenti": [
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    }
+  ],
+  "Note_Per_La_Compilazione": {
+    "Nota": "Per inserire nel report i programmi Arduino fare copia ed incolla esclusivamente nella vista 'tree' dell'editor online, in modo che venga preposto in automatico il back-slash davanti ai doppi apici delle stringhe"
+  },
+  "Parte_I_Sensore_Analogico": {
+    "Valore_scelto_di_R_in_ohm": 0,
+    "Incertezza_senza_messa_a_punto": {
+      "Incertezza_assoluta_in_gradi_Celsius": 0,
+      "Contributi_considerati": "nominare i contributi riportando il loro valore qui..."
+    },
+    "Risoluzione_in_gradi_Celsius": 0,
+    "Autoriscaldamento_in_gradi_Celsius": 0,
+    "Risoluzione_con_40_letture_in_gradi_Celsius": 0,
+    "Programmi" : {
+      "Ultimo_Programma_Arduino" : "",
+      "Ultimo_Block_Diagram_LabView": ""
+    }
+  },
+  "Parte_II_Misura_della_tensione_di_riferimento": {
+    "Tensione_misurata_in_Volt": 0,
+    "Incertezza_assoluta_in_Volt" : 0,
+    "Programma_Arduino": {
+      "Programma": ""
+    },
+    "Incertezza_dopo_misura_di_tensione": {
+      "Incertezza_assoluta_in_gradi_Celsius": 0,
+      "Contributi_considerati": "nominare i contributi riportando il loro valore qui..."
+    }
+  },
+  "Parte_III_Messa_A_Punto_Con_Sensore_Digitale": {
+    "Nota" : "Se non disponete del DHT22, utilizzate il termoigrometro del laboratorio",
+    "Sensore_Digitale_DHT22_Disponibile" : false,
+    "Temperatura_Misurata_con_sensore_digitale_allo_startup_in_gradi_Celsius": 0,
+    "Temperatura_Misurata_con_LM335_allo_startup_in_gradi_Celsius": 0,
+    "Coefficiente_Beta_in_K": 0,
+    "Incertezza_relativa_percentuale_coefficiente_Beta": 0,
+    "Stima_Incertezza_dopo_messa_a_punto": {
+      "Incertezza_stimata_in_gradi_Celsius": 0,
+      "Spiegare_come_la_avete_stimata": "..."
+    },
+    "Programma_Arduino_Facoltativo" : {
+     "Programma_con_DHT22" : ""
+    }
+  }
+}

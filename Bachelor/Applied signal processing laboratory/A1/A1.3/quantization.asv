@@ -1,0 +1,97 @@
+clc
+close all
+clear all
+
+%% parameters
+A=1;
+f0=1;
+Tmax = 1;
+fs=100; %high frequency to avoid Nyquist problems
+Ts=1/fs;
+N=Tmax/Ts;
+fres= fs/N;
+
+%%axis
+%frquency axis
+f=-fs/2:fres:fs/2-fres; 
+fshift=(0:N-1)*fres;
+
+%time axis
+t= 0:Ts:Tmax-Ts;
+
+%%signal
+s = A* cos(2*pi*f0*t);
+
+%% plot the original signal and the quantized sinusoidal signal
+m=2; % bits
+sgm= 2^m; % number of segments we divede the amplitude domain into 
+delta= (max(s) - min(s))/sgm;
+partition  = (-A+delta) : delta : (A-delta);%defines quantization intervals 
+codebook = min(partition) - delta/2 : delta : max(partition)+delta/2;  %defines quantizations values associated to every intervals
+[index, sq] = quantiz (s, partition , codebook);
+
+figure('Name','s(t) vs s_{q}(t)')
+hold on
+grid on
+box on
+xlabel('t(s)',LineWidth=1.5)
+plot(t,sq,"Linewidth",2,"color","r");
+plot(t,s,"Linewidth",1.5, "color","b");
+legend ("s(t)","s_{q}(t)")
+title(['s(t) vs s_{q}(t);  ','Number of bits : m=', num2str(m)]);
+xlim([0 Tmax])
+ylim([-1 +1])
+
+
+%% compare the spectrum of the original and the quantized signal and the SNR
+%Spectral Analysis
+S = fft(s) * Ts; 
+Sq= fft(sq)*Ts;
+S_db = 20*log10 (abs(S));
+Sq_db = 20*log10 (abs(Sq));
+
+%The idea is to create a filter that allows us to isolate f0 frequency and
+%then use it to isolate the noise frequency components
+%since we have to use this operation more times, I create a function
+support = rect_function(f,(f0-0.5));
+BPF = rect_function(f,(f0+0.5)) - support;
+
+%in order to corectly filter the signal I need to take into account how the
+%Fast Fourier Transform is implemented
+Sq_clean =fftshift(BPF).*(Sq); %%fft per ottenere un sinc e shift per centrare BPF
+Noise = fftshift(BPF - 1).* (Sq); %%fa -1 per predersi tutte le componenti che non siano in banda passante
+
+
+%energy evaluation 
+ Es = sum(abs(Sq_clean).^2)*fres; %formula energia asse delle frequenze
+ En = sum(abs(Noise).^2)*fres; 
+ SNR = 10* (log10 (Es) - log10(En));
+
+
+%Frequency domain in db
+figure
+hold on
+grid on
+box on
+
+subplot (2,1,1)
+
+plot(f,fftshift(S_db));
+
+title({'|S(f)|{^2}'});
+xlabel('f(Hz)',LineWidth=1.5)
+ylabel('|S(f)|{^2}',LineWidth=1.5)
+xlim([-50 50])
+ylim([-50 0])
+
+
+
+subplot (2,1,2)
+
+plot(f,fftshift(Sq_db));
+
+xlabel('f(Hz)',LineWidth=1.5)
+ylabel('|S_{q}|{^2}(f)',LineWidth=1.5)
+title(['|S_{q}|{^2}  SNR=', num2str(SNR)]);
+xlim([-50 50])
+ylim([-50 0])

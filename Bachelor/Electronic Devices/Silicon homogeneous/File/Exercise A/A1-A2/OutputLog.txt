@@ -1,0 +1,123 @@
+********* PADRE2.4E Device Modeling Program *********
+
+              Date and time = 12/13/22  13:28:07  
+
+
+
+   1... title      Doped semiconductor p type
+
+   2... $Mesh Specifications
+   3... mesh       rect nx=200 ny=3 width=1000 outf=mesh
+   4... x.m        n=1  l=0 r=1
+   5... x.m        n=200 l=375 r=1
+   6... y.m        n=1  l=0 r=1
+   7... y.m        n=3  l=88 r=1
+
+   8... $ Regions Specifications
+   9... region     num=1 ix.l=1 ix.h=200 iy.l=1 iy.h=3 silicon
+  10... elec       num=1 ix.l=1 ix.h=1  iy.l=1 iy.h=3
+  11... elec       num=2 ix.l=200 ix.h=200  iy.l=1 iy.h=3
+
+  12... $ Doping Specifications
+  13... dop        reg=1 p.type conc=9e+16  uniform
+  14... # modified automatically for rappture:
+  15... # plot.1d    dop a.x=0 b.x=375 b.y=44 a.y=44 points ascii outf=dop
+  16... plot.1d dop a.x=0 b.x=375 b.y=44 a.y=44 points
+    ... +       ascii outfile=plot826-1.do
+
+  17... $ Material Specifications
+  18... material name=silicon
+    ... +	EG300=1.12 PERMITTIVITY=11.7 NC300=2.8E19 NV300=1.04E19
+
+  19... $ Specify models
+  20... models temperature=300
+  21... system newton
+
+  22... $ Solve for initial conditions
+  23... solve init
+  24... # modified automatically for rappture:
+  25... # plot.1d pot a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=pot
+  26... plot.1d pot a.x=0 b.x=375 a.y=44 b.y=44
+    ... +       ascii outfile=plot826-2.pot
+  27... # modified automatically for rappture:
+  28... # plot.1d band.val a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=vb
+  29... plot.1d band.val a.x=0 b.x=375 a.y=44 b.y=44
+    ... +       ascii outfile=plot826-3.bandv
+  30... # modified automatically for rappture:
+  31... # plot.1d band.con a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=cb
+  32... plot.1d band.con a.x=0 b.x=375 a.y=44 b.y=44
+    ... +       ascii outfile=plot826-4.bandc
+  33... # modified automatically for rappture:
+  34... # plot.1d qfn a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=qfn
+  35... plot.1d qfn a.x=0 b.x=375 a.y=44 b.y=44
+    ... +       ascii outfile=plot826-5.qfn
+  36... # modified automatically for rappture:
+  37... # plot.1d qfp a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=qfp
+  38... plot.1d qfp a.x=0 b.x=375 a.y=44 b.y=44
+    ... +       ascii outfile=plot826-6.qfp
+  39... # modified automatically for rappture:
+  40... # plot.1d ele a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=ele
+  41... plot.1d ele a.x=0 b.x=375 a.y=44 b.y=44
+    ... +       ascii outfile=plot826-7.el
+  42... # modified automatically for rappture:
+  43... # plot.1d hole a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=hole
+  44... plot.1d hole a.x=0 b.x=375 a.y=44 b.y=44
+    ... +       ascii outfile=plot826-8.h
+  45... # modified automatically for rappture:
+  46... # plot.1d e.field a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=efield
+  47... plot.1d e.field a.x=0 b.x=375 a.y=44 b.y=44
+    ... +       ascii outfile=plot826-9.ef
+
+  48... end
+
+
+ **************************                                  
+ Doped semiconductor p type                                  
+ **************************                                  
+  
+
+ Mesh statistics :
+     Total grid points =    600
+     Total no. of elements =    796
+     Min grid spacing (um) = 1.8844E+00
+     Max grid spacing (um) = 4.4040E+01  (r= 2.3371E+01)
+     Obtuse elements =     0  ( 0.0%)
+
+
+ Grid written to mesh                                              
+ 
+
+                     Material Definitions
+   Index     Name                    Regions
+    1       silicon                  1
+
+
+
+
+Solution for bias:
+    V1 =  0.0000000E+00      V2 =  0.0000000E+00
+
+
+  Initial solution
+
+ o-itr i-itr   psi-error
+   1     0    9.9924E-01  R(   0)
+   1     1    1.5390E-15  U(   1)
+   1     1    9.9924E-01  R(   1)
+
+ Electrode   Voltage   Electron Current   Hole Current   Conduction Current
+             (Volts)       (Amps)            (Amps)           (Amps)
+     1        0.0000     0.00000E+00       0.00000E+00      0.00000E+00
+     2        0.0000     0.00000E+00       0.00000E+00      0.00000E+00
+
+ Electrode          Flux         Displacement Current      Total Current
+                   (Coul)              (Amps)                 (Amps)
+     1           2.45336E-24         0.00000E+00            0.00000E+00
+     2           2.45336E-24         0.00000E+00            0.00000E+00
+  
+ Convergence criterion completely met
+ Total cpu time for Newton equation assembly =    0.0000
+ Total cpu time for Newton linear solves =    0.0000 (    0.0000)
+ Total cpu time for bias point =    0.0000
+ Total cpu time =     0.0167
+

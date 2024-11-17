@@ -1,0 +1,115 @@
+{
+  "Numero_Esercitazione": 1,
+  "Data": "27/03/2024",
+  "ID_Squadra_Gruppo": "XYY",
+  "Studenti": [
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    }
+  ],
+  "Dati_Generali": {
+    "Ora_Inizio": "00:00",
+    "Temperatura_Inizale": "0",
+    "Ora_Fine": "00:00",
+    "Temperatura_Finale": "0"
+  },
+  "Strumenti_Disponibili": {
+    "Alimentatore": "",
+    "Multimetro_HP": "",
+    "Tester_ICE": "",
+    "Resistore_Variabile": "",
+    "Termometro": ""
+  },
+  "Taratura": {
+    "D1": {
+      "Numero_punti": 0,
+      "Vettore_Letture_in_div": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "Vettore_Misure_Resistenza_in_ohm": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "Nota": "Aumentare la dimensione dei vettori in modo da inserire tutte le misure effettuate"
+    },
+    "D2": {
+      "Coefficiente_angolare_retta_in_ohm_a_div": 0,
+      "Termine_noto_retta_in_ohm": 0,
+      "Massimo_scostamento_in_ohm": 0
+    },
+    "D3": {
+      "Temperatura_resistore_in_gradi_Celsius": 0,
+      "Corrente_di_prova_in_mA": 0,
+      "Altre_grandezze": "Riportare in questo campo eventuali altre grandezze di stato..."
+    },
+    "D4": {
+      "Temperatura_laboratorio_in_gradi_Celsius": 0,
+      "Informazioni_utili": "eventuali informazioni",
+      "Condizioni_operative": "eventuali condizioni"
+    }
+  },
+  "Certificato_Taratura": {
+    "D5": {
+      "Funzione_di_taratura": "",
+      "Nota": "Riportate l'equazione della funzione di taratura. Esprimete R in Ohm e L in divisioni (attenzione a non dimenticare cifre significative). Esempio: R = 1.01314 * L + 0.23"
+    },
+    "D6": {
+      "Incertezza_funzione_di_taratura_in_ohm": 0,
+      "Nota": "Riportare l'incertezza assoluta massima della funzione di taratura del punto D5",
+      "Contributi_di_incertezza_considerati": "elencateli (con il rispettivo valore)..."
+    },
+    "D7": {
+      "Campo_di_impiego_temperatura": "specificare",
+      "Campo_di_impiego_corrente": "specificare",
+      "Eventuali_altre_grandezze": ""
+    },
+    "D8": {
+      "Condizioni_di_impiego": "...",
+      "Nota": "Indicare eventuali condizioni di impiego sotto cui la taratura e' valida"
+    }
+  },
+  "Certificato_Taratura_Campo_Ristretto": {
+    "D9": {
+      "Funzione_di_taratura": "",
+      "Nota": "Riportate l'equazione della funzione di taratura. Esprimete R in Ohm e L in divisioni (attenzione a non dimenticare cifre significative). Esempio: R = 1.01314 * L + 0.23"
+    },
+    "D10": {
+      "Incertezza_funzione_di_taratura_in_ohm": 0,
+      "Nota": "Riportare l'incertezza assoluta massima della funzione di taratura del punto D5",
+      "Contributi_di_incertezza_considerati": "elencateli (con il rispettivo valore)..."
+    },
+    "D11": {
+      "Campo_di_impiego_resistore": "specificare il campo ristretto",
+      "Campo_di_impiego_temperatura": "specificare",
+      "Campo_di_impiego_corrente": "specificare",
+      "Eventuali_altre_grandezze": ""
+    },
+    "D12": {
+      "Condizioni_di_impiego": "...",
+      "Nota": "Indicare eventuali condizioni di impiego sotto cui la taratura e' valida"
+    }
+  }
+}
+

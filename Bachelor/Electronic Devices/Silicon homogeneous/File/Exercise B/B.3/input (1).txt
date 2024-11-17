@@ -1,0 +1,33 @@
+title      Doped semiconductor n type light corto equi
+$Mesh Specifications
+mesh       rect nx=200 ny=4 width=1000 outf=mesh
+x.m        n=1 l=0  r=1
+x.m        n=40 l=0.01 r=1
+x.m        n=200 l=8  r=1
+y.m        n=1  l=0 r=1
+y.m        n=4  l=88 r=1
+
+$ Regions specifications
+region     num=1 ix.l=1 ix.h=40 iy.l=1 iy.h=4 silicon
+region     num=2 ix.l=40 ix.h=200 iy.l=1 iy.h=4 silicon
+
+elec num=1 ix.l=1 ix.h=1 iy.l=1 iy.h=4
+elec num=2 ix.l=200 ix.h=200 iy.l=1 iy.h=4
+  
+dop reg=1 p.type conc=9e+16 uniform
+dop reg=2 p.type conc=9e+16 uniform
+
+$ Material Specifications
+material name=silicon 
++	 taun0=1e-06 taup0=1e-06 MUN=831.0986 MUP=308.4246
+
+$ Specify models
+models srh temperature=300
+system electrons holes newton
+
+$ Solve for initial conditions
+solve init
+solve gen=8e22 reg.gen=1 dir.gen=x
+plot.1d ele a.x=0 b.x=8 a.y=44 b.y=44 ascii outf=ele
+plot.1d hole a.x=0 b.x=8 a.y=44 b.y=44 ascii outf=hole
+end

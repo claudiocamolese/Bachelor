@@ -1,0 +1,27 @@
+title Semiconduttore intermedio con generazione ottica
+$ Costruzione dispositivo
+mesh rect nx=250 ny=2 outf=mesh
+x.m n=1 l=0 r=1
+x.m n=40 l=0.01 r=1
+x.m n=250 l=375 r=1
+y.m n=1 l=0 r=1
+y.m n=2 l=88 r=1
+$ Regioni
+region num=1 ix.l=1 ix.h=40 iy.l=1 iy.h=2 silicon
+region num=2 ix.l=40 ix.h=250 iy.l=1 iy.h=2 silicon
+elec num=1 ix.l=1 ix.h=1 iy.l=1 iy.h=2
+elec num=2 ix.l=250 ix.h=250 iy.l=1 iy.h=2
+$ Drogaggio
+dop reg=1 p.type conc=9e+16 uniform
+dop reg=2 p.type conc=9e+16 uniform
+$ Materiali
+material name=silicon
++ taun0=1e-06 taup0=1e-06 MUN=831.0986 MUP=308.4246
+$ Modelli
+models srh temperature=300
+system electrons holes newton
+solve init
+solve prev gen=8e21 reg.gen=1 dir.gen=x
+plot.1d ele a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=ele
+plot.1d hole a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=hole
+end

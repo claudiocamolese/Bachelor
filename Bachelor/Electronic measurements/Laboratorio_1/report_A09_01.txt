@@ -1,0 +1,145 @@
+{
+  "Numero_Esercitazione": 1,
+  "Data": "27/03/2024",
+  "ID_Squadra_Gruppo": "A09",
+  "Studenti": [
+    {
+      "Cognome": "Allione",
+      "Nome": "Paolo",
+      "Matricola": 296500
+    },
+    {
+      "Cognome": "Camolese",
+      "Nome": "Claudio",
+      "Matricola": 297378
+    },
+    {
+      "Cognome": "Caglioti",
+      "Nome": "Massimo",
+      "Matricola": 293418
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    }
+  ],
+  "Dati_Generali": {
+    "Ora_Inizio": "08:40",
+    "Temperatura_Inizale": "23.2",
+    "Ora_Fine": "11:17",
+    "Temperatura_Finale": "23.4"
+  },
+  "Strumenti_Disponibili": {
+    "Alimentatore": "",
+    "Multimetro_HP": "34401A",
+    "Tester_ICE": "",
+    "Resistore_Variabile": "POT 15",
+    "Termometro": "PCE-HT-420"
+  },
+  "Taratura": {
+    "D1": {
+      "Numero_punti": 20,
+      "Vettore_Letture_in_div": [
+	50,
+      100,
+	150,
+      200,
+	250,
+      300,
+	350,
+	400,
+	450,
+	500,
+	550,
+	600,
+	650,
+	700,
+	750,
+	800,
+	850,
+	900,
+	950
+      ],
+      "Vettore_Misure_Resistenza_in_ohm": [
+	55.629,
+      105.07,
+	155.146,
+      205.681,
+	256.702,
+      306.567,
+	356.124,
+	405.369,
+	456.238,
+	505.171,
+	557.087,
+	606.790,
+	657.484,
+	707.680,
+	757.280,
+	807.505,
+	856.916,
+	906.579,
+	956.849
+      ],
+      "Nota": "Aumentare la dimensione dei vettori in modo da inserire tutte le misure effettuate"
+    },
+    "D2": {
+      "Coefficiente_angolare_retta_in_ohm_a_div": 1.0022,
+      "Termine_noto_retta_in_ohm": 5.3878,
+      "Massimo_scostamento_in_ohm": 1.3783
+    },
+    "D3": {
+      "Temperatura_resistore_in_gradi_Celsius": 23.2249,
+      "Corrente_di_prova_in_mA": 1,
+      "Altre_grandezze": "Le uniche grandezzee di stato significativamente influenti sono temperatura e corrente (autoriscaldamento)" 
+    },
+    "D4": {
+      "Temperatura_laboratorio_in_gradi_Celsius": 23.2,
+      "Informazioni_utili": "La stima della differenza di temperatura da una settimana all'altra e' maggiore dell'incertezza del termometro e della stima del gradiente di temperatura del laboratorio",
+      "Condizioni_operative": "Collegato il potenziometro in esame con metodo a 4 terminali, utilizzando 2 forchette. Effettuata la misura dopo aver impostato le divisioni scelte e inserito il fermo del potenziometro"
+    }
+  },
+  "Certificato_Taratura": {
+    "D5": {
+      "Funzione_di_taratura": "R = (1.0022 * L) + 5.3878",
+      "Nota": "Riportate l'equazione della funzione di taratura. Esprimete R in Ohm e L in divisioni (attenzione a non dimenticare cifre significative). Esempio: R = 1.01314 * L + 0.23"
+    },
+    "D6": {
+      "Incertezza_funzione_di_taratura_in_ohm": 1.3783,
+      "Nota": "Riportare l'incertezza assoluta massima della funzione di taratura del punto D5",
+      "Contributi_di_incertezza_considerati": "incertezza dello strumento di misura (0.1407), incertezza dello stato del resistore (0.0957) , incertezza di interpolazione (0.8819), incertezza di lettura (0.2600)"
+    },
+    "D7": {
+      "Campo_di_impiego_temperatura": "( 25 +- 5 ) °C",
+      "Campo_di_impiego_corrente": "( 1 +- 0.5 ) mA",
+      "Eventuali_altre_grandezze": ""
+    },
+    "D8": {
+      "Condizioni_di_impiego": "Temperatura e corrente nel range specificato.",
+      "Nota": "Indicare eventuali condizioni di impiego sotto cui la taratura e' valida"
+    }
+  },
+  "Certificato_Taratura_Campo_Ristretto": {
+    "D9": {
+      "Funzione_di_taratura": "R = (1.0010 * L) + 6.2745",
+      "Nota": "Riportate l'equazione della funzione di taratura. Esprimete R in Ohm e L in divisioni (attenzione a non dimenticare cifre significative). Esempio: R = 1.01314 * L + 0.23"
+    },
+    "D10": {
+      "Incertezza_funzione_di_taratura_in_ohm": 1.2147,
+      "Nota": "Riportare l'incertezza assoluta massima della funzione di taratura del punto D5",
+      "Contributi_di_incertezza_considerati": "incertezza dello strumento di misura (0.1407), incertezza dello stato del resistore (0.0957) , incertezza di interpolazione (0.7183), incertezza di lettura (0.2600)"
+    },
+    "D11": {
+      "Campo_di_impiego_resistore": "da 450 divisioni a 950 divisioni con passo 50 divisioni ",
+      "Campo_di_impiego_temperatura": "( 25 +- 5 ) °C",
+      "Campo_di_impiego_corrente": "( 1 +- 0.5 ) mA",
+      "Eventuali_altre_grandezze": ""
+    },
+    "D12": {
+      "Condizioni_di_impiego": "Temperatura e corrente nel range specificato",
+      "Nota": "Indicare eventuali condizioni di impiego sotto cui la taratura e' valida"
+    }
+  }
+}
+

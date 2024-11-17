@@ -1,0 +1,90 @@
+{
+  "Numero_Esercitazione": 2,
+  "Data": "10/04/2024",
+  "ID_Squadra_Gruppo": "A09",
+  "Studenti": [
+    {
+      "Cognome": "Camolese",
+      "Nome": "Claudio",
+      "Matricola": 297378
+    },
+    {
+      "Cognome": "Caglioti",
+      "Nome": "Massimo",
+      "Matricola": 293418
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    },
+    {
+      "Cognome": "",
+      "Nome": "",
+      "Matricola": 0
+    }
+  ],
+  "Dati_Generali": {
+    "Ora_Inizio": "08:40",
+    "Temperatura_Inizale": "23.8",
+    "Ora_Fine": "10:29",
+    "Temperatura_Finale": "24.1"
+  },
+  "Strumenti_Disponibili": {
+    "Alimentatore": "DP832",
+    "Multimetro_HP": "34401A",
+    "Multimetro_Palmare": "AM-520-EUR, 180701418",
+    "Tester_ICE": "Non usato",
+    "Resistore_Variablile": "POT 15",
+    "Box_Resistore_Incognito": "RBOX 09",
+    "Termometro": "PCE-HT-420"
+  },
+    "Progetto": {
+    "Tensione_Alimentazione": 30,
+    "Ra_Nominale": 680,
+    "Rb_Nominale": 120000,
+    "Sensibilita_teorica_ponte_epsilon_S_percentuale" : 0.0354,
+    "Eventuali_Note": "Con Sensibilita_teorica_ponte_epsilon_S_percentuale abbiamo inteso la sensibilita' del ponte",
+    "N.B." : "Inserire la tensione in volt e le resistenze in ohm"
+  },
+    "Taratura_Resistori_Fissi": {
+    "Ra": 671.58,
+    "dRa": 0.7839,
+    "eps_Ra_in_percentuale": 0.12,
+    "Rb": 118724,
+    "dRb": 144.1731,
+    "eps_Rb_in_percentuale": 0.12,
+    "Temperatura_di_riferimento_resistori" : 24,
+    "Eventuali_Note" : "Le incertezze tengono conto di: lettura, strumento, stato, autoriscaldamento",
+    "N.B." : "Inserire le resistenze e le incertezze assolute in ohm, la temperatura in gradi Celsius"
+  },
+  "Misura_Campione_Civetta": {
+    "Bilanciamento_Ponte" : {
+      "Lettura_Potenziometro_in_div" : 830.9,
+      "Incertezza_lettura_in_div" : 0.25,
+      "Rc" : 838.0054,
+      "Incertezza_Rc_in_Ohm_dal_certificato" : 1.3783,
+      "Incertezza_Rc_in_Ohm_stima_migliore" : 1.2147,
+      "Nota" : "Per l'incertezza di Rc (stima migliore) utilizzare tutti i dati disponibili dalla taratura del potenziometro effettuata nel laboratorio 1"
+    },
+    "Sensibilita_sperimentale_ponte_epsilon_S_percentuale" : 0.0333,
+    "Dichiarazione_misura":
+    {
+      "Rx": 4.7403,
+      "dRx":0.3521,
+      "Nota" : "Attenzione: il misurando è definito a 23 °C",
+      "Nota2" : "Potete utilizzare anche la stima migliore dell'incertezza di Rc del punto precedente"
+    },
+    "Contributi_Incertezza_considerati": 
+    [
+      {"Contributo" : "Incertezze resistenze", "Valore_in_ohm" : 0.0038},
+      {"Contributo" : "Incertezza contatti", "Valore_in_ohm" : 0.2},
+      {"Contributo" : "Incertezza galvanometro", "Valore_in_ohm" : 0.125},
+      {"Contributo" : "Incertezza stato Rx", "Valore_in_ohm" : 8.2955e-04},
+      {"Contributo" : "Incertezza sensibilita' ponte", "Valore_in_ohm" : 0.0067},
+      {"Contributo" : "Incertezza lettura potenziometro", "Valore_in_ohm" : 0.0014}
+    ],
+    "N.B." : "Aumentare la dimensione del vettore per inserire tutti i contributi considerati",
+    "Eventuali_Note_Finali": "Il contributo piu' significativo e' dovuto alla ressitenza dei contatti, che e' stata stimata."
+  }
+}

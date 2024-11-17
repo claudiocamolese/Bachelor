@@ -1,0 +1,38 @@
+title      Doped semiconductor p type
+
+$Mesh Specifications
+mesh       rect nx=200 ny=3 width=1000 outf=mesh
+x.m        n=1  l=0 r=1
+x.m        n=200 l=375 r=1
+y.m        n=1  l=0 r=1
+y.m        n=3  l=88 r=1
+
+$ Regions Specifications
+region     num=1 ix.l=1 ix.h=200 iy.l=1 iy.h=3 silicon
+elec       num=1 ix.l=1 ix.h=1  iy.l=1 iy.h=3
+elec       num=2 ix.l=200 ix.h=200  iy.l=1 iy.h=3
+
+$ Doping Specifications
+dop        reg=1 p.type conc=9e+16  uniform
+plot.1d    dop a.x=0 b.x=375 b.y=44 a.y=44 points ascii outf=dop
+
+$ Material Specifications
+material name=silicon
++	EG300=1.12 PERMITTIVITY=11.7 NC300=2.8E19 NV300=1.04E19
+
+$ Specify models
+models temperature=600
+system newton
+
+$ Solve for initial conditions
+solve init
+plot.1d pot a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=pot
+plot.1d band.val a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=vb
+plot.1d band.con a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=cb
+plot.1d qfn a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=qfn
+plot.1d qfp a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=qfp
+plot.1d ele a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=ele
+plot.1d hole a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=hole
+plot.1d e.field a.x=0 b.x=375 a.y=44 b.y=44 ascii outf=efield
+
+end
