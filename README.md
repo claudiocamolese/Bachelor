@@ -1,6 +1,6 @@
 ﻿# Personal-Page
 
-This repository is a collection of some of the projects I have record of during my academic career.
+This repository is a collection of some of the projects I have recorded of during my academic career.
 
 Bachelor = **Physical engineering**.  
 Master = **Data science and engineering** ------> **Working in progress**
